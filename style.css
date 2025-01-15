@@ -1,0 +1,554 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: #2c3e50;
+  }
+  /* Highlight Animation Keyframes */
+/* Highlight Animation Keyframes */
+@keyframes lineHighlight {
+  0% {
+    background-size: 0 100%; /* Start with no highlight */
+  }
+  100% {
+    background-size: 100% 100%; /* End with full highlight */
+  }
+}
+
+/* h2 Text Styling */
+h4 {
+  font-size: 35px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, yellow, yellow) no-repeat;
+  background-size: 0 100%; /* Initially no highlight */
+  transition: background-size 0.3s ease-in-out;
+  animation: lineHighlight 4s steps(10, end) forwards; /* Moves and stops at the end */
+}
+
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Navigation Bar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10%;
+    background-color: #ffffff;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav .logo {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    color: #000000;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #f39c12;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+   
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+  #home {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire section */
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2; /* Make sure the text is above the video */
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2rem;
+    background-color: #F9B930; /* Yellow color for button */
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  
+  /* Services Section */
+  .services {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .service-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Gallery Section */
+/* Gallery Section */
+.gallery {
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 equal columns */
+  grid-template-rows: auto; /* Adjust rows based on content */
+  align-items: center;
+  justify-items: center;
+}
+
+/* Styling Images and Video */
+.image-grid img,
+.image-grid video {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Adjust Video Width */
+.center-video {
+  grid-column: 3 / span 3; /* Center the video spanning 3 columns */
+  grid-row: 1 / span 4;    /* Takes 4 rows */
+  width: 100%;             /* Video takes the entire width of its columns */
+  height: auto;
+  border: 2px solid #ccc;  /* Optional border for styling */
+}
+
+/* Left Side Photos */
+.left-top-photo {
+  grid-column: 2 / span 1; /* Shifted slightly right */
+  grid-row: 1 / span 2;    /* Takes 2 rows */
+  width: 90%;              /* Slightly narrower than default for spacing */
+}
+
+.left-bottom-photo {
+  grid-column: 2 / span 1; /* Shifted slightly right */
+  grid-row: 3 / span 1;    /* Stacks below */
+  width: 90%;              /* Match top photo width */
+}
+
+.left-extra-photo {
+  grid-column: 2 / span 1; /* Shifted slightly right */
+  grid-row: 4 / span 1;    /* Below the bottom photo */
+  width: 90%;              /* Match other photos */
+}
+
+/* Right Side Photos */
+.right-top-photo {
+  grid-column: 6 / span 1; /* Shifted slightly left */
+  grid-row: 1 / span 2;    /* Takes 2 rows */
+  width: 90%;              /* Match left side */
+}
+
+.right-bottom-photo {
+  grid-column: 6 / span 1; /* Shifted slightly left */
+  grid-row: 3 / span 1;    /* Stacks below */
+  width: 90%;              /* Match left side */
+}
+
+.right-extra-photo {
+  grid-column: 6 / span 1; /* Shifted slightly left */
+  grid-row: 4 / span 1;    /* Below the bottom photo */
+  width: 90%;              /* Match other photos */
+}
+
+/* Remove Gaps Between Stacked Photos */
+.image-grid img:not(.center-video) {
+  margin-bottom: 0; /* No gap between stacked images */
+}
+
+
+.image-grid img {
+  width: 170%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+  
+  
+  /* About Section */
+  .about {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .image img {
+
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .image img:hover {
+    transform: scale(1.05);
+  } 
+  .about p {
+    font-size: 18px;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px;
+  }
+  .underline-text {
+    position: relative;
+    display: inline-block;
+    color: inherit;
+  }
+
+  .underline-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust to position the underline */
+    width: 0;
+    height: 2px;
+    background-color: red;
+    animation: underline 2s ease-in-out infinite;
+  }
+
+  @keyframes underline {
+    0% {
+      width: 0;
+    }
+    50% {
+      width: 100%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  /* Contact Section */
+.contact {
+  padding: 50px 10%;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact h4 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+form input, 
+form textarea, 
+form button {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"] {
+  width: 48%; /* Two inputs per row */
+}
+
+form textarea {
+  width: 100%; /* Full width for textarea */
+  resize: none; /* Prevent resizing */
+}
+
+form button {
+  width: 100%;
+  background-color: #f39c12;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #e67e22;
+}
+
+form input:focus, 
+form textarea:focus {
+  border-color: #f39c12;
+  outline: none;
+}
+
+.contact-details {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #666;
+}
+
+.contact-details p {
+  margin: 5px 0;
+}
+
+/* Footer Section */
+footer {
+  padding: 8px 10%;
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+footer ul li a {
+  color: #f9f9f9;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+  color: #f39c12;
+}
+.social-links {
+  margin: 15px 0;
+}
+
+.social-icon img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 2px 10px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f39c12;
+}
+
+/* Hero Section */
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.home video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home-content {
+  z-index: 1;
+  text-align: center;
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e67e22;
+}
+}
