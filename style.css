@@ -210,50 +210,6 @@ h4 {
   border: 2px solid #ccc;  /* Optional border for styling */
 }
 
-/* Left Side Photos */
-.left-top-photo {
-  grid-column: 2 / span 1; /* Shifted slightly right */
-  grid-row: 1 / span 2;    /* Takes 2 rows */
-  width: 90%;              /* Slightly narrower than default for spacing */
-}
-
-.left-bottom-photo {
-  grid-column: 2 / span 1; /* Shifted slightly right */
-  grid-row: 3 / span 1;    /* Stacks below */
-  width: 90%;              /* Match top photo width */
-}
-
-.left-extra-photo {
-  grid-column: 2 / span 1; /* Shifted slightly right */
-  grid-row: 4 / span 1;    /* Below the bottom photo */
-  width: 90%;              /* Match other photos */
-}
-
-/* Right Side Photos */
-.right-top-photo {
-  grid-column: 6 / span 1; /* Shifted slightly left */
-  grid-row: 1 / span 2;    /* Takes 2 rows */
-  width: 90%;              /* Match left side */
-}
-
-.right-bottom-photo {
-  grid-column: 6 / span 1; /* Shifted slightly left */
-  grid-row: 3 / span 1;    /* Stacks below */
-  width: 90%;              /* Match left side */
-}
-
-.right-extra-photo {
-  grid-column: 6 / span 1; /* Shifted slightly left */
-  grid-row: 4 / span 1;    /* Below the bottom photo */
-  width: 90%;              /* Match other photos */
-}
-
-/* Remove Gaps Between Stacked Photos */
-.image-grid img:not(.center-video) {
-  margin-bottom: 0; /* No gap between stacked images */
-}
-
-
 .image-grid img {
   width: 170%;
   border-radius: 10px;
