@@ -116,6 +116,7 @@ h4 {
   
   .hero-content p {
     font-size: 1.2rem;
+    color: #F9B930;
     margin-bottom: 2rem;
   }
   
@@ -276,7 +277,8 @@ h4 {
     margin-bottom: 20px;
   }
   .image img {
-
+    width: 70%;
+    height: 100%;
     border-radius: 10px;
     transition: transform 0.3s ease;
   }
@@ -356,7 +358,7 @@ form input[type="text"],
 form input[type="email"],
 form input[type="tel"],
 form input[type="date"] {
-  width: 48%; /* Two inputs per row */
+  width: 100%; /* Two inputs per row */
 }
 
 form textarea {
@@ -446,109 +448,61 @@ footer ul li a:hover {
 
 
 @media (max-width: 768px) {
-  .home-content h1 {
-    font-size: 2.5rem;
+
+  #home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire section */
   }
-
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  
+  nav .menu-icon {
+font-size: 24px;
+cursor: pointer;
+color: #000; /* Changed icon color to black */
 }
 
-/* Body Styling */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+
+.dropdown {
+display: none;
+flex-direction: column;
+background: #ffffff;
+position: absolute;
+top: 50px;
+right: 0;
+width: 40%;
+max-height: 100%;
+overflow: hidden;
 }
 
-/* Navigation Bar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 5%;
-  background-color: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.dropdown li {
+margin: 10px 0;
+padding: 10px 20px;
 }
 
-nav .logo {
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
+.dropdown li a {
+font-size: 18px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 10px;
+.show-dropdown {
+display: flex;
+max-height: 300px;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 500;
-  padding: 2px 10px;
-  transition: color 0.3s ease;
+.menu-icon-close {
+display: none;
+font-size: 24px;
+cursor: pointer;
+color: #000000;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin: 20px;
 }
 
-nav ul li a:hover {
-  color: #f39c12;
-}
-
-/* Hero Section */
-.home {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: #000;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-.home video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.home-content {
-  z-index: 1;
-  text-align: center;
-}
-
-.home-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.home-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.cta-button {
-  padding: 10px 20px;
-  background-color: #f39c12;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #e67e22;
-}
 }
