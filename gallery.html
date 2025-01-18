@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Magic</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+     h1 {
+      text-align: center;
+      
+      font-size: 36px;
+      color: #333;
+      margin-top: 20px;
+
+    }
+
+     .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Show 3 items in a row */
+      gap: 20px;
+      padding: 20px;
+      margin: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item .category {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .highlight {
+      background-color: #fffa65;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px){
+        .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin: 20px;
+}
+.gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    }
+    </style>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">Event Magic.</div>
+    <i class="fas fa-bars menu-icon" id="menuOpen" onclick="toggleMenu(true)"></i>
+    <i class="fas fa-times menu-icon-close" id="menuClose" onclick="toggleMenu(false)"></i>
+    <ul class="dropdown">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+ <!-- Gallery Heading -->
+ <h1>Our Stunning <span class="highlight">Event Decorations</span></h1>
+
+ <!-- Gallery Section -->
+ <div class="gallery">
+   <!-- Birthday -->
+   <div class="gallery-item">
+     <img src="img/OIP (2).jpg" alt="Birthday Event">
+     <div class="category">Birthday</div>
+   </div>
+   <div class="gallery-item">
+     <img src="img/OIP.jpg" alt="Birthday Event">
+     <div class="category">Birthday</div>
+   </div>
+
+   <!-- Wedding -->
+   <div class="gallery-item">
+     <img src="img/OIP (1.jpg" alt="Wedding Event">
+     <div class="category">Wedding</div>
+   </div>
+   <div class="gallery-item">
+     <img src="img/OIP.jpg" alt="Wedding Event">
+     <div class="category">Wedding</div>
+   </div>
+
+   <!-- Party -->
+   <div class="gallery-item">
+     <img src="img/OIP (2).jpg" alt="Party Event">
+     <div class="category">Party</div>
+   </div>
+   <div class="gallery-item">
+     <img src="img/OIP (2).jpg" alt="Party Event">
+     <div class="category">Party</div>
+   </div>
+
+   <!-- Reception -->
+   <div class="gallery-item">
+     <img src="img/OIP.jpg" alt="Reception Event">
+     <div class="category">Reception</div>
+   </div>
+   <div class="gallery-item">
+     <img src="img/OIP (1.jpg" alt="Reception Event">
+     <div class="category">Reception</div>
+   </div>
+ </div>
+</body>
+<script>
+    function toggleMenu(isOpen) {
+      const dropdown = document.querySelector('.dropdown');
+      const menuOpen = document.getElementById('menuOpen');
+      const menuClose = document.getElementById('menuClose');
+
+      if (isOpen) {
+        dropdown.classList.add('show-dropdown');
+        menuOpen.style.display = 'none';
+        menuClose.style.display = 'block';
+      } else {
+        dropdown.classList.remove('show-dropdown');
+        menuOpen.style.display = 'block';
+        menuClose.style.display = 'none';
+      }
+    }
+
+    // Ensure the close icon is hidden on page load
+    document.getElementById('menuClose').style.display = 'none';
+  </script>
+</html>
